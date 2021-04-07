@@ -1,0 +1,9 @@
+$background-color: #6991ff;
+$color: #fff;
+$success: #91f788;
+$danger: #ff7069;
+
+@mixin colors {
+  background-color: $background-color;
+  color: $color;
+}

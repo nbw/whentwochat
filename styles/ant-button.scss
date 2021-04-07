@@ -1,0 +1,24 @@
+/* Overrides for ANT Button */
+
+@import "colors";
+
+.ant-btn.button {
+  color: $background-color;
+  &.ant-btn-background-ghost {
+    color: $color;
+    &:active,
+    &:hover,
+    &:focus {
+      color: $color;
+      border-color: $color;
+    }
+    &.success:hover {
+      color: $success;
+      border-color: $success;
+    }
+    &.danger:hover {
+      color: $danger;
+      border-color: $danger;
+    }
+  }
+}

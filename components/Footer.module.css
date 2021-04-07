@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  align-items: top;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 100%;
+  height: 100px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  height: 1em;
+  margin: 5px;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.list {
+  list-style: none;
+  padding: 0 1.5rem;
+}
