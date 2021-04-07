@@ -1,6 +1,6 @@
 {
-  "name": "next-netlify-starter",
-  "version": "0.3.0",
+  "name": "When To Chat",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

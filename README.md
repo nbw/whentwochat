@@ -2,6 +2,8 @@
 
 When To Chat V2! Rewritten using [Next.js](https://nextjs.org/) and Redux.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1ceb5d3c-dbed-4c59-82e3-2c1ad8a7b092/deploy-status)](https://app.netlify.com/sites/whentwochat/deploys)
+
 ## Getting Started
 
 First, run the development server:
