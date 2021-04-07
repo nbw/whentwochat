@@ -1,4 +1,4 @@
 [build]
-  functions = "./functions"
+  functions = "functions"
   command = "npm run export"
   publish = "out"
