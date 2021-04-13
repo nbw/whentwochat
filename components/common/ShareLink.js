@@ -6,11 +6,11 @@ import {
   CheckCircleOutlined
 } from '@ant-design/icons'
 import { Button, Input, Tooltip } from 'antd'
-import { useTranslation } from 'next-i18next'
 import {encodeURLParam} from "../../lib/urlHelpers"
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import { shorten } from '../../lib/bitly'
+import * as t from '../../public/locales/en/common'
 
 const share = (state, handler) => {
   const link = encodeURLParam(window.location.href, "s", state)
@@ -34,7 +34,6 @@ const ShareLink = () => {
 
   const id = "shareInput"
   const state = useSelector((state) => state)
-  const { t } = useTranslation('common')
 
   let copyIcon
   if (copied) {
@@ -55,7 +54,7 @@ const ShareLink = () => {
             value={link}
             suffix={
               <div onClick={() => { copy(id, setCopied)}}>
-                <Tooltip title={t("copy")} color="#fff">
+                <Tooltip title={t["copy"]} color="#fff">
                   {copyIcon}
                 </Tooltip>
               </div>
@@ -65,19 +64,19 @@ const ShareLink = () => {
             onClick={() => copy(id, setCopied)}
             className={styles.button}
             icon={copyIcon} ghost>
-            { t("copy") }
+            { t["copy"] }
           </Button>
           <Button
-            onClick={() => shorten(link, setLink)}
+            onClick={() => shortenUrl(link, setLink)}
             className={styles.button}
             icon={<LinkOutlined/>} ghost>
-            { t("shorten") }
+            { t["shorten"] }
           </Button>
         </div>
   } else {
     object = 
         <Button className='button' icon={<ShareAltOutlined/>} ghost>
-          { t("share") }
+          { t["share"] }
         </Button>
   }
 

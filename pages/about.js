@@ -1,13 +1,12 @@
 import Hed from '@components/Hed'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
-import { useTranslation } from 'next-i18next'
+import * as t from '../public/locales/en/common'
 
 export default function About() {
-  const { t } = useTranslation('common')
   return (
     <div className="container">
-      <Hed title={t('title')} />
+      <Hed title={t['title']} />
       <Header 
         title="When To Chat" 
         subtitle="Reconcile Time Zone differences, so that chatting is easy"
@@ -30,8 +29,8 @@ export default function About() {
         </ul>
       </main>
       <Footer
-        title={t('title')} 
-        twitter={t('twitter')}
+        title={t['title']} 
+        twitter={t['twitter']}
       />
     </div>
   )

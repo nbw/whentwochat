@@ -1,9 +1,10 @@
 import Head from 'next/head'
+import * as t from '../public/locales/en/common'
 
-export default function Hed({title, googleApiKey}) {
+export default function Hed({googleApiKey}) {
   return (
     <Head>
-      <title>{title}</title>
+      <title>{t["title"]}</title>
       <link rel="icon" href="/favicon.ico" />
       { googleApiKey &&
         <script

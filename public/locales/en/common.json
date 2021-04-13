@@ -9,9 +9,9 @@
   "new": "Add location",
   "day_plus": " (+1 day)",
   "day_minus": " (-1 day)",
-  "time_am": "{{hour}}:00 am",
-  "time_pm": "{{hour}}:00 pm",
-  "time_24": "{{hour}}:00",
+  "time_am": ":00 am",
+  "time_pm": ":00 pm",
+  "time_24": ":00",
   "time_format_toggle_12": "24-hour Time",
   "time_format_toggle_24": "12-hour Time",
   "share": "Share",
@@ -24,5 +24,8 @@
   "24_0": "0",
   "24_12": "12",
   "24_24": "24",
-  "24_36": "12"
+  "24_36": "12",
+  "about": "About",
+  "contact": "Contact",
+  "language": "Language"
 }

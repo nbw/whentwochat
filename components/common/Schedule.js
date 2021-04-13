@@ -1,13 +1,12 @@
 import styles from './Schedule.module.scss'
 import ScheduleItem from './ScheduleItem'
 import { hourDisplayI18n, plusMinusDay } from '../../lib/timeHelpers'
-import { useTranslation } from 'next-i18next'
 
-const buildSchedule = (local, global, offset, timeFormat, t) => {
+const buildSchedule = (local, global, offset, timeFormat) => {
   return local.map((localValue, index) => {
     const globalValue = global[index]
-    const text = hourDisplayI18n((index + offset), timeFormat, t)
-    const subText = (timeFormat === 12) ? plusMinusDay(index + offset, t) : ""
+    const text = hourDisplayI18n((index + offset), timeFormat)
+    const subText = (timeFormat === 12) ? plusMinusDay(index + offset) : ""
     return (
       <ScheduleItem 
         key={index}
@@ -21,8 +20,7 @@ const buildSchedule = (local, global, offset, timeFormat, t) => {
 }
 
 const Schedule = ({title, local, global, offset, timeFormat}) => {
-  const { t } = useTranslation('common')
-  const items = buildSchedule(local, global, offset, timeFormat, t)
+  const items = buildSchedule(local, global, offset, timeFormat)
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{title}</h2>

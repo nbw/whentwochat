@@ -2,18 +2,17 @@ import styles from './Zone.module.css'
 import LocationInput from './LocationInput'
 import TimeRangePicker from './TimeRangePicker'
 import ZoneDelete from './ZoneDelete'
-import { useTranslation } from 'next-i18next'
 import { useDispatch, useSelector } from 'react-redux'
+import * as t from '../../public/locales/en/common'
 
 const placeholder = (id) => {
-  const { t } = useTranslation('common');
   switch(id) {
   case 0:
-    return t("location_your");
+    return t["location_your"];
   case 1:
-    return t("location_their");
+    return t["location_their"];
   default:
-    return t("location_another");
+    return t["location_another"];
   }
 }
 

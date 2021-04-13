@@ -1,11 +1,10 @@
 import '@styles/globals.scss'
 import 'antd/dist/antd.css'
-import { appWithTranslation } from 'next-i18next'
 import { useEffect } from 'react'
 import { Provider } from 'react-redux'
 import makeStore from '../store'
 
-const MyApp = ({ Component, pageProps }) => {
+export default({ Component, pageProps }) => {
   const store = makeStore(pageProps.initialReduxState);
 
   useEffect(function mount() {
@@ -14,9 +13,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </Provider>
   )
 }
-
-export default appWithTranslation(MyApp)
