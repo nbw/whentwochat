@@ -26,7 +26,7 @@ export default function TimeRangePicker({id, startTime, endTime, timeFormat, upd
     <div key={id}>
       <Slider
         className={"slider"}
-        range={{ draggableTrack: true }}
+        range={ true }
         tipFormatter={(v) => hourDisplayI18n(v, timeFormat, )}
         min={Math.min(...MARKS)}
         max={Math.max(...MARKS)}

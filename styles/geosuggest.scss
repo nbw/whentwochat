@@ -53,6 +53,14 @@ $input-width: 350px;
   width: $input-width;
 }
 
+@media only screen and (max-width: 600px) {
+  .geosuggest__item {
+    // 20px padding + 2px border on input
+    width: calc(100% - 16px);
+    margin: 0;
+  }
+}
+
 .geosuggest__item--active,
 .geosuggest__item:hover {
   background-color: $background-color;
