@@ -9,7 +9,7 @@ const defaultZone = () => {
 }
 
 const initialState = {
-  timeFormat: 12, // 12 or 24 
+  timeFormat: 24, // 12 or 24
   zones: [defaultZone(), defaultZone()],
 };
 
