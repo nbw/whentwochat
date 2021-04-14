@@ -1,4 +1,3 @@
-require('dotenv').config();
 const axios = require('axios');
 
 const BITLY_TOKEN = process.env.BITLY_TOKEN;
