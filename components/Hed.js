@@ -4,7 +4,7 @@ import * as t from '../public/locales/en/common'
 export default function Hed({googleApiKey}) {
   return (
     <Head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
       <title>{t["title"]}</title>
       <meta name="title" content={t["title"]}></meta>
       <meta name="description" content={t["subtitle"]} ></meta>
