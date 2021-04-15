@@ -27,7 +27,8 @@ const copy = (id, setCopied) => {
 const shortenUrlCallback = () => {
   const dispatch = useDispatch()
   return async (urlLong) => {
-    const url = await shorten(urlLong)
+    const resp = await shorten(urlLong)
+    const url = resp.link
     dispatch({
       type: 'URL/SHORTEN',
       payload: {url}
