@@ -1,4 +1,4 @@
-import {decodeURLParam} from "../lib/urlHelpers"
+import {encodeURLParam, decodeURLParam} from "../lib/urlHelpers"
 
 const defaultZone = () => {
   return {
@@ -8,7 +8,16 @@ const defaultZone = () => {
   }
 }
 
+const makeUrl = (state) => {
+  const encodable = {
+    zones: state.zones,
+    timeFormat: state.timeFormat
+  }
+  return encodeURLParam(window.location.origin, "s", encodable)
+}
+
 const initialState = {
+  url: "",
   timeFormat: 24, // 12 or 24
   zones: [defaultZone(), defaultZone()],
 };
@@ -26,10 +35,17 @@ const updateZone = (state, action) => {
       ...action.payload
     }
   });
+
+  const url = makeUrl({
+    ...state,
+    zones,
+  });
+
   return {
     ...state,
-    zones: zones,
-  };
+    zones,
+    url
+  }
 }
 
 const deleteZone = (state, action) => {
@@ -45,6 +61,12 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case "URL/INIT":
       return loadUrlState(action.window);
+    case "URL/SHORTEN":
+      const {url} = action.payload;
+      return {
+        ...state,
+        url
+      }
     case "TIME/TOGGLE":
       const timeFormat = (state.timeFormat === 12) ? 24 : 12; 
       return {

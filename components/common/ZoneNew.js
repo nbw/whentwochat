@@ -1,6 +1,6 @@
 import styles from './ZoneNew.module.css'
 import { UserAddOutlined } from '@ant-design/icons';
-import { useDispatch, } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Tooltip, Button } from 'antd'
 import * as t from '../../public/locales/en/common'
 

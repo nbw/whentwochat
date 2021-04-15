@@ -7,8 +7,8 @@ import {
 } from '@ant-design/icons'
 import { Button, Input, Tooltip } from 'antd'
 import {encodeURLParam} from "../../lib/urlHelpers"
-import { useSelector } from 'react-redux'
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { shorten } from '../../lib/bitly'
 import * as t from '../../public/locales/en/common'
 
@@ -24,16 +24,23 @@ const copy = (id, setCopied) => {
   setCopied(true)
 }
 
-const shortenUrl = async (link, setLink) => {
-  setLink(await shorten(link));
+const shortenUrlCallback = () => {
+  const dispatch = useDispatch()
+  return async (urlLong) => {
+    const url = await shorten(urlLong)
+    dispatch({
+      type: 'URL/SHORTEN',
+      payload: {url}
+    })
+  }
 }
 
-const ShareLink = () => {
-  const [link, setLink] = useState("")
+const ShareLink = ({state, short}) => {
   const [copied, setCopied] = useState(false)
 
   const id = "shareInput"
-  const state = useSelector((state) => state)
+  const link = useSelector((state) => state.url)
+  const shortenUrl = shortenUrlCallback();
 
   let copyIcon
   if (copied) {
@@ -67,7 +74,7 @@ const ShareLink = () => {
             { t["copy"] }
           </Button>
           <Button
-            onClick={() => shortenUrl(link, setLink)}
+            onClick={() => {shortenUrl(link)}}
             className={styles.button}
             icon={<LinkOutlined/>} ghost>
             { t["shorten"] }
@@ -83,7 +90,7 @@ const ShareLink = () => {
   return (
     <div 
       className={styles.container}
-      onClick={() => share(state, setLink)}
+      onClick={() => { return true}}
     >
       {object}
     </div>

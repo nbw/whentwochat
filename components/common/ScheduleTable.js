@@ -60,7 +60,6 @@ const ScheduleTable = () => {
   const timeFormat = useSelector((state) => state.timeFormat)
   const scheduleableZones = selectScheduleableZones(zones)
   const { locals, global } = calculateSchedules(scheduleableZones)
-
   const schedules = locals.map(({local, offset}, i) => {
     return <Schedule 
       key={i}
