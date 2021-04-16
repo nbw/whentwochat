@@ -60,7 +60,10 @@ const deleteZone = (state, action) => {
 export default (state = initialState, action) => {
   switch (action.type) {
     case "URL/INIT":
-      return loadUrlState(action.window);
+      return {
+        ...loadUrlState(action.window),
+        url: action.window.location.href
+      }
     case "URL/SHORTEN":
       const {url} = action.payload;
       return {

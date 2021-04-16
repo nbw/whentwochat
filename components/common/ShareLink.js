@@ -38,9 +38,10 @@ const shortenUrlCallback = () => {
 
 const ShareLink = ({state, short}) => {
   const [copied, setCopied] = useState(false)
+  const [share, setSharable] = useState(false)
 
   const id = "shareInput"
-  const link = useSelector((state) => state.url)
+  const url = useSelector((state) => state.url)
   const shortenUrl = shortenUrlCallback();
 
   let copyIcon
@@ -51,7 +52,7 @@ const ShareLink = ({state, short}) => {
   }
 
   let object
-  if (link && link.length > 0) {
+  if (share && url && url.length > 0) {
     object = 
         <div className={styles.shareContainer}>
           <Input 
@@ -59,7 +60,7 @@ const ShareLink = ({state, short}) => {
             placeholder="Borderless"
             className={styles.input}
             bordered={false}
-            value={link}
+            value={url}
             suffix={
               <div onClick={() => { copy(id, setCopied)}}>
                 <Tooltip title={t["copy"]} color="#fff">
@@ -75,7 +76,7 @@ const ShareLink = ({state, short}) => {
             { t["copy"] }
           </Button>
           <Button
-            onClick={() => {shortenUrl(link)}}
+            onClick={() => {shortenUrl(url)}}
             className={styles.button}
             icon={<LinkOutlined/>} ghost>
             { t["shorten"] }
@@ -83,7 +84,10 @@ const ShareLink = ({state, short}) => {
         </div>
   } else {
     object = 
-        <Button className='button' icon={<ShareAltOutlined/>} ghost>
+        <Button
+          onClick={() => {setSharable(true)}}
+          className='button'
+          icon={<ShareAltOutlined/>} ghost>
           { t["share"] }
         </Button>
   }
