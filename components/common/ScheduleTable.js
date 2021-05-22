@@ -26,14 +26,6 @@ const calculateSchedules = (zones) => {
     const offset = relativeOffset(baseUtc, zone.utcOffset)
     let shiftOffset = offset
 
-    if (shiftOffset > 12) {
-      shiftOffset = 24 - shiftOffset
-    }
-
-    if (shiftOffset < -12) {
-      shiftOffset = -24 - shiftOffset
-    }
-
     const local = buildRotatedSchedule(zone.startTime, zone.endTime, shiftOffset)
     return { local, offset, zoneIndex }
   })
