@@ -1,0 +1,74 @@
+@import "colors";
+
+$input-font-size: 1.3rem;
+$input-line-height: 2.8rem;
+$input-width: 350px;
+
+/* GEOSUGGEST */
+.geosuggest__input-wrapper input {
+  @include colors;
+  border: 2px solid $color;
+  display: block;
+  font-size: $input-font-size;
+  outline: none;
+  margin: auto;
+  width: $input-width;
+  line-height: $input-line-height;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 0.5rem;
+  &::placeholder {
+    color: $color;
+    opacity: 0.7;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .geosuggest__input-wrapper input {
+    width: 100%;
+  }
+}
+
+.geosuggest__suggests-wrapper {
+  position: absolute;
+  z-index: 100;
+}
+
+.geosuggest__suggests {
+  margin: 0;
+  padding: 0;
+}
+
+.geosuggest__item {
+  @include colors;
+  list-style-type: none;
+  border-bottom: solid $color 2px;
+  border-left: solid $color 2px;
+  border-right: solid $color 2px;
+  -webkit-transition: width 1s; /* Safari */
+  transition: width 1s;
+  margin: auto;
+  padding: 0.8rem;
+  width: $input-width;
+}
+
+@media only screen and (max-width: 600px) {
+  .geosuggest__item {
+    // 20px padding + 2px border on input
+    width: calc(100% - 16px);
+    margin: 0;
+  }
+}
+
+.geosuggest__item--active,
+.geosuggest__item:hover {
+  background-color: $background-color;
+  cursor: pointer;
+}
+
+.geosuggest__suggests--hidden {
+  max-height: 0;
+  overflow: hidden;
+  border-width: 0;
+}

@@ -1,0 +1,22 @@
+@import "../../styles/colors";
+
+.item {
+  padding: 0.1rem;
+  margin: 2px 0;
+  text-align: center;
+  color: $color;
+}
+
+.localActive {
+  background-color: $color;
+  color: $background-color;
+  opacity: 0.6;
+}
+
+.globalActive {
+  opacity: 1;
+}
+
+.subText {
+  font-size: 0.6rem;
+}

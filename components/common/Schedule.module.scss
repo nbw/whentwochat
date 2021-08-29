@@ -1,0 +1,15 @@
+.container {
+  max-width: 450px;
+  flex-grow: 1;
+  margin: 1px;
+}
+
+.title {
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 1.2rem;
+  }
+}

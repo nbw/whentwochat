@@ -1,0 +1,12 @@
+.container {
+  margin-top: 0.5rem;
+  padding: 0 2rem;
+  text-align: center;
+  transition: font-size 0.3s;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+.icon {
+  padding: 0.15rem 0.15rem 0.15rem 0.15rem;
+}

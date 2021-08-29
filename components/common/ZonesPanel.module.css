@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1300px;
+  margin: 2rem 0 2rem 0;
+}
+
+.itemsContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  max-width: 1300px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+  .itemsContainer {
+    justify-content: center;
+  }
+}

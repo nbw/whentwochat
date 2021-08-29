@@ -1,0 +1,50 @@
+@import "../../styles/colors";
+
+.container {
+  margin: 2rem 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.shareContainer {
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: $color;
+  max-width: 600px;
+}
+
+.input {
+  background-color: $background-color;
+  margin: 1rem 0;
+
+  &:hover {
+    color: $color;
+    background-color: $background-color;
+  }
+
+  input {
+    line-height: 2rem;
+    height: 2.5rem;
+    color: $color;
+  }
+
+  .anticon {
+    color: $color;
+    margin: 1rem;
+  }
+  .iconWhite svg {
+    color: $color;
+  }
+  svg {
+    margin-left: 0.7rem;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.button {
+  border-color: $background-color;
+  color: $background-color;
+  margin: 0 1rem;
+}

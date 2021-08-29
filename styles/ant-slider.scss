@@ -1,0 +1,29 @@
+/* Overrides for ANT Slider */
+
+@import "colors";
+
+/* ANT DESIGNS */
+.slider.ant-slider:hover .ant-slider-track,
+.slider .ant-slider-track,
+.slider .ant-slider-track:hover {
+  background-color: $color;
+}
+
+.slider .ant-slider-rail {
+  background-color: $color;
+  opacity: 0.4;
+}
+
+.slider .ant-slider-handle,
+.slider .ant-slider-dot-active,
+.slider.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
+  border-color: $color;
+}
+
+.slider .ant-slider-handle.ant-tooltip-open {
+  background-color: $color;
+}
+
+.slider .ant-slider-mark-text {
+  color: $color;
+}

@@ -1,0 +1,7 @@
+/* Overrides for ANT Button */
+
+@import "colors";
+
+.ant-tooltip-inner {
+  color: $background-color !important;
+}
